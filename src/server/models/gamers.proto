@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "hq.matching.models";
+option java_outer_classname = "GamersModel";
+
+package gamers;
+
+service AddGamer 
+
+// Gamer Model
+message Gamer {
+  string Id = 1;  // Gamer Id.
+  string DomainId = 2; // Domain Id that you want put gamer in.
+  int32 Rank = 3; // Gamers Rank
+  int32 Priority = 4; // Priority for matching.
+}
+
+// Gamers Model
+message Gamers {
+  int32 Count=1;  // Count of gamers.
+  repeated Gamer Items = 2;
+}
